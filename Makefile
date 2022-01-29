@@ -44,8 +44,9 @@ DATA		:=	data
 INCLUDES	:=	include
 ROMFS		:=	romfs
 
-APP_TITLE   := SDL2+mixer+image Demo
-APP_AUTHOR  := carstene1ns
+APP_TITLE   := Conuhacks VI
+APP_AUTHOR  := Big Brain Brotherhood
+APP_VERSION := 1
 
 #---------------------------------------------------------------------------------
 # options for code generation
