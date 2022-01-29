@@ -5,19 +5,19 @@
 #include <pu/Plutonium>
 
 // Define your main layout as a class inheriting from pu::Layout
-class CustomLayout : public pu::ui::Layout {
+class PhoneMenuLayout : public pu::ui::Layout {
     private:
-
-        // An easy way to keep objects is to have them as private members
-        // Using ::Ref (of a Plutonium built-in object or any class having PU_SMART_CTOR) is an alias to a shared_ptr of the instance.
-        pu::ui::elm::TextBlock::Ref helloText;
+        pu::ui::elm::Menu::Ref phoneMenu;
+        pu::ui::elm::MenuItem::Ref messageMenuItem;
+        pu::ui::elm::MenuItem::Ref contactsMenuItem;
+        pu::ui::elm::MenuItem::Ref settingsMenuItem;
 
     public:
 
-        CustomLayout();
+        PhoneMenuLayout();
 
         // Have ::Ref alias and ::New() static constructor
-        PU_SMART_CTOR(CustomLayout)
+        PU_SMART_CTOR(PhoneMenuLayout)
 };
 
 // Define your application (can't instantiate base class, so need to make a derived one)
@@ -25,7 +25,7 @@ class MainApplication : public pu::ui::Application {
     private:
 
         // Layout instance
-        CustomLayout::Ref layout;
+        PhoneMenuLayout::Ref layout;
     
     public:
         using Application::Application;
