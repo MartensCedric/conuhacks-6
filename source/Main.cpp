@@ -1,4 +1,4 @@
-#include <MainApplication.hpp>
+#include <GamerText.hpp>
 
 /*
 // If you would like to initialize and finalize stuff before or after Plutonium, you can use libnx's userAppInit/userAppExit

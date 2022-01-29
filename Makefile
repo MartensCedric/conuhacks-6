@@ -44,7 +44,7 @@ DATA		:=	data
 INCLUDES	:=	include
 # ROMFS		:=	romfs
 
-APP_TITLE   := Conuhacks VI
+APP_TITLE   := Gamer Text
 APP_AUTHOR  := Big Brain Brotherhood
 APP_VERSION := 1
 
