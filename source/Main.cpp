@@ -1,4 +1,6 @@
 #include <GamerText.hpp>
+#include <twilio.h>
+
 
 /*
 // If you would like to initialize and finalize stuff before or after Plutonium, you can use libnx's userAppInit/userAppExit
@@ -31,7 +33,10 @@ int main() {
     // If wou would like to show with a "fade in" from black-screen to the UI, use instead ->ShowWithFadeIn();
     main->Show();
 
-    // Exit homebrew (Plutonium will handle all disposing of UI and renderer/application, don't worry!
+    // Make a POST request to the twilio API.
 
+
+
+    // Exit homebrew (Plutonium will handle all disposing of UI and renderer/application, don't worry!
     return 0;
 }
