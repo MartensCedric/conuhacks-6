@@ -132,7 +132,7 @@ int main(int argc, char** argv) {
 
     // render text as texture
     SDL_Rect helloworld_rect = { 0, SCREEN_H - 36, 0, 0 };
-    helloworld_tex = render_text(renderer, "Hello, world!", font, colors[1], &helloworld_rect);
+    helloworld_tex = render_text(renderer, "LIGMA BALLS", font, colors[1], &helloworld_rect);
 
     // no need to keep the font loaded
     TTF_CloseFont(font);
