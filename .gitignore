@@ -32,8 +32,8 @@
 *.app
 
 # Switch
-.elf
-.nacp
-.nro
+*.elf
+*.nacp
+*.nro
 
 build
