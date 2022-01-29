@@ -12,7 +12,9 @@ PhoneMenuLayout::PhoneMenuLayout() : Layout::Layout() {
     this->phoneMenu = pu::ui::elm::Menu::New(0, 160, pu::ui::render::ScreenWidth, menuItemColor, menuItemSelectionColor, 80, 560 / 3);
 
     this->messageMenuItem = pu::ui::elm::MenuItem::New(std::string("Messages"));
+
     this->contactsMenuItem = pu::ui::elm::MenuItem::New(std::string("Contacts"));
+
     this->settingsMenuItem = pu::ui::elm::MenuItem::New(std::string("Settings"));
 
     this->phoneMenu->AddItem(this->messageMenuItem);
@@ -22,3 +24,4 @@ PhoneMenuLayout::PhoneMenuLayout() : Layout::Layout() {
     // Add the instance to the layout. IMPORTANT! this MUST be done for them to be used, having them as members is not enough (just a simple way to keep them)
     this->Add(this->phoneMenu);
 }
+

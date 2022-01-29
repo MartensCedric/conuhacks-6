@@ -3,16 +3,15 @@
 
 // Include Plutonium's main header
 #include <pu/Plutonium>
+#include <MessagingLayout.hpp>
 
 // Define your main layout as a class inheriting from pu::Layout
 class PhoneMenuLayout : public pu::ui::Layout {
-    private:
+    public:
         pu::ui::elm::Menu::Ref phoneMenu;
         pu::ui::elm::MenuItem::Ref messageMenuItem;
         pu::ui::elm::MenuItem::Ref contactsMenuItem;
         pu::ui::elm::MenuItem::Ref settingsMenuItem;
-
-    public:
 
         PhoneMenuLayout();
 

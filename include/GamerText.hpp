@@ -5,7 +5,10 @@ class MainApplication : public pu::ui::Application {
     private:
 
         // Layout instance
-        PhoneMenuLayout::Ref layout;
+        PhoneMenuLayout::Ref phoneLayout;
+        MessagingLayout::Ref messagingLayout;
+
+        void GotoMessaging();
     
     public:
         using Application::Application;
