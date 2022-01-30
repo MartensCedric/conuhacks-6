@@ -18,7 +18,13 @@ MessagingLayout::MessagingLayout() : Layout::Layout() {
         frames[i].add_to_layout(this);
     }
 
-    /* this->textRectangle = pu::ui::elm::Rectangle::New(10, 600, 800, 200, pu::ui::Color::FromHex("0xaaaaaa")); */
-    /* this->textArea = pu::ui::elm::TextBlock::New(10, 605, std::string("Hello gamers")); */
-    /* this->sendButton = pu::ui::elm::Button::New(400, 605, 200, 100, std::string("Send"), pu::ui::Color::FromHex("#000000"), pu::ui::Color::FromHex("#FFFFFF")); */
+    // Input message to send fields
+    this->textRectangle = pu::ui::elm::Rectangle::New(0, 670, 1300, 50, pu::ui::Color::FromHex("#aaaaaa"));
+    this->textArea = pu::ui::elm::TextBlock::New(10, 675, std::string("Hello gamers"));
+    this->sendButton = pu::ui::elm::Button::New(1175, 675, 90, 40, std::string("Send"), pu::ui::Color::FromHex("#000000"),
+                                                pu::ui::Color::FromHex("#FFFFFF"));
+
+    this->Add(this->textRectangle);
+    this->Add(this->textArea);
+    this->Add(this->sendButton);
 }
