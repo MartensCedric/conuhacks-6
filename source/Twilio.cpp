@@ -1,7 +1,7 @@
 #include <curl/curl.h>
 #include <sstream>
-#include "../include/Twilio.hpp"
-#include "../include/json.hpp"
+#include <Twilio.hpp>
+#include <json.hpp>
 #include <iostream>
 
 size_t _null_write(
@@ -25,7 +25,11 @@ size_t _stream_write(
         return response_size;
 }
 
-void send_message(std::string &message_body) 
+Twilio::Twilio() {
+
+}
+
+void Twilio::send_message(std::string message_body)
 {
     // Make a POST request to the twilio API. 
     CURL *curl;
@@ -35,7 +39,7 @@ void send_message(std::string &message_body)
     std::string account_sid("48d506c54c7b41dcb3dfc600384ff842CA");
     std::string auth_token("92a624ff895c02b0d57419106b35fac2");
     std::string from_number = "+18676709701";
-    std::string to_number = "+15142454864"; // koa
+    std::string to_number = "+19028059374"; // Will
     std::string temp = "";
 
         for (int i=account_sid.length()-1; i>=0; i--)
@@ -73,8 +77,8 @@ void send_message(std::string &message_body)
     curl_easy_setopt(curl, CURLOPT_PASSWORD, auth_token.c_str());
 
     /* always cleanup */
-        CURLcode res = curl_easy_perform(curl);
-        curl_free(message_body_escaped);
+    CURLcode res = curl_easy_perform(curl);
+    curl_free(message_body_escaped);
     curl_easy_cleanup(curl);
     curl_global_cleanup();
 }

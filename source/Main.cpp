@@ -38,7 +38,7 @@ int main() {
 
     // Exit homebrew (Plutonium will handle all disposing of UI and renderer/application, don't worry!
     //std::cout << "ligma" << std::endl;
-    std::string text = "ligma1";
-    send_message(text);
+//    std::string text = "ligma1";
+//    send_message(text);
     return 0;
 }

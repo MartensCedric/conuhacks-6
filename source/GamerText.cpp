@@ -39,4 +39,15 @@ void MainApplication::OnLoad() {
     // Set a function when input is caught. This input handling will be the first one to be handled (before Layout or any Elements)
     // Using a lambda function here to simplify things
     // You can use member functions via std::bind() C++ wrapper
+    this->messagingLayout->SetOnInput([&](const u64 down, const u64 up, const u64 held, pu::ui::TouchPoint touchPoint) {
+        if (down & HidNpadButton_B) {
+            this->GotoListMessages();
+        } else if ((down & HidNpadButton_A) || touchPoint.HitsRegion(100, 670, 1075, 50)) {
+            this->messagingLayout->spawn_keyboard();
+        }
+    });
+
+    this->messagingLayout->backButton->SetOnClick([&]() {
+        this->GotoListMessages();
+    });
 }
