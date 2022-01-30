@@ -4,7 +4,7 @@
 
 #include <SystemKeyboard.hpp>
 
-SystemKeyboard::SystemKeyboard(MessagingLayout::Ref layout, pu::ui::elm::TextBlock::Ref textBlock) {
+SystemKeyboard::SystemKeyboard(MessagingLayout* layout, pu::ui::elm::TextBlock::Ref textBlock) {
     this->layout = layout;
     this->textBlock = textBlock;
 }
@@ -37,7 +37,7 @@ std::string SystemKeyboard::getUserInput(const std::string &guide_text, const st
     return "";
 }
 
-void SystemKeyboard::attachKeyboard(MessagingLayout::Ref layout, pu::ui::elm::TextBlock::Ref textBlock) {
+void SystemKeyboard::attachKeyboard(MessagingLayout* layout, pu::ui::elm::TextBlock::Ref textBlock) {
     this->layout->SetOnInput([&](const u64 down, const u64 up, const u64 held, pu::ui::TouchPoint touchPoint) {
         if(down & HidNpadButton_A) {
             layout->Add(textBlock);
