@@ -38,7 +38,24 @@ int main() {
 
     // Exit homebrew (Plutonium will handle all disposing of UI and renderer/application, don't worry!
     //std::cout << "ligma" << std::endl;
-    std::string text = "ligma1";
-    send_message(text);
+    /* std::string text = "ligma1"; */
+    /* send_message(text); */
+    std::string account_sid("48d506c54c7b41dcb3dfc600384ff842CA");
+    std::string auth_token("92a624ff895c02b0d57419106b35fac2");
+
+    std::string temp = "";
+
+    for (int i=account_sid.length()-1; i>=0; i--)
+             temp += account_sid[i];
+
+    account_sid = temp;
+
+    temp = "";
+    for (int i=auth_token.length()-1; i>=0; i--)
+            temp +=  auth_token[i];
+
+    auth_token = temp;
+
+    get_messages(account_sid, auth_token);
     return 0;
 }
