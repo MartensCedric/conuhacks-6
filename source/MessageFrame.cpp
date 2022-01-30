@@ -30,8 +30,8 @@ void MessageFrame::add_to_layout(pu::ui::Layout* layout)
     {
         colorToUse = fromColor;
     }
-    this->rectangle = pu::ui::elm::Rectangle::New(this->h_offset + h_extra_offset, this->v_offset, 800, 200, colorToUse);
-    this->textblock = pu::ui::elm::TextBlock::New(this->h_offset + h_extra_offset, this->v_offset, this->message);
+    this->rectangle = pu::ui::elm::Rectangle::New(this->h_offset + h_extra_offset, this->v_offset, 600, 80, colorToUse);
+    this->textblock = pu::ui::elm::TextBlock::New(this->h_offset + h_extra_offset + 10, this->v_offset + 10, this->message);
     
     layout->Add(this->rectangle);
     layout->Add(this->textblock);
