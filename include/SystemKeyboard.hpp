@@ -12,16 +12,14 @@
 
 class SystemKeyboard {
     public:
-        SystemKeyboard(MessagingLayout* layout, pu::ui::elm::TextBlock::Ref textBlock);
+        SystemKeyboard();
 
-        void attachKeyboard(MessagingLayout* layout, pu::ui::elm::TextBlock::Ref textBlock);
+        void attachKeyboard();
+        std::string getUserInput(const std::string &guide_text, const std::string &initial_text, int max_len);
 
     private:
-        std::string getUserInput(const std::string &guide_text, const std::string &initial_text, int max_len);
-        void userInputCallback();
 
-        MessagingLayout* layout;
-        pu::ui::elm::TextBlock::Ref textBlock;
+        void userInputCallback();
 };
 
 

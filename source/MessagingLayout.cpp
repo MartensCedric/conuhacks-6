@@ -27,9 +27,12 @@ MessagingLayout::MessagingLayout() : Layout::Layout() {
                                                 pu::ui::Color::FromHex("#FFFFFF"));
 
     this->Add(this->textRectangle);
-//    this->Add(this->textArea);
+    this->Add(this->textArea);
     this->Add(this->sendButton);
+}
 
-    SystemKeyboard keyboard(this, this->textArea);
-    keyboard.attachKeyboard(this, this->textArea);
+void MessagingLayout::spawn_keyboard()
+{
+    SystemKeyboard keyboard;
+    this->textArea->SetText(keyboard.getUserInput("", "", 250));
 }
