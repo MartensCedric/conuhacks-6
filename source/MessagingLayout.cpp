@@ -2,6 +2,8 @@
 #include <MessagingLayout.hpp>
 #include <pu/ui/ui_Types.hpp>
 
+#include <SystemKeyboard.hpp>
+
 MessagingLayout::MessagingLayout() : Layout::Layout() {
     pu::ui::elm::Rectangle::Ref darkscreen = pu::ui::elm::Rectangle::New(0, 0, 1920, 1080, pu::ui::Color::FromHex("#222222"));
     this->Add(darkscreen);
@@ -25,6 +27,9 @@ MessagingLayout::MessagingLayout() : Layout::Layout() {
                                                 pu::ui::Color::FromHex("#FFFFFF"));
 
     this->Add(this->textRectangle);
-    this->Add(this->textArea);
+//    this->Add(this->textArea);
     this->Add(this->sendButton);
+
+    SystemKeyboard keyboard(this, this->textArea);
+    keyboard.attachKeyboard(this, this->textArea);
 }

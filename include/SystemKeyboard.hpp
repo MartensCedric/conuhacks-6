@@ -6,16 +6,22 @@
 #define CONUHACKS_6_SYSTEMKEYBOARD_H
 
 #include <pu/Plutonium>
+#include <pu/ui/ui_Types.hpp>
+
+#include <MessagingLayout.hpp>
 
 class SystemKeyboard {
     public:
-        SystemKeyboard();
+        SystemKeyboard(MessagingLayout::Ref layout, pu::ui::elm::TextBlock::Ref textBlock);
 
-        void attachKeyboard(pu::ui::elm::MenuItem::Ref menuItem, void (*callBackFunction)(std::string));
+        void attachKeyboard(MessagingLayout::Ref layout, pu::ui::elm::TextBlock::Ref textBlock);
 
     private:
         std::string getUserInput(const std::string &guide_text, const std::string &initial_text, int max_len);
         void userInputCallback();
+
+        MessagingLayout::Ref layout;
+        pu::ui::elm::TextBlock::Ref textBlock;
 };
 
 
