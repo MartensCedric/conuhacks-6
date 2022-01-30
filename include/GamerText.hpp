@@ -1,5 +1,6 @@
 #include <pu/Plutonium>
 #include <PhoneMenuLayout.hpp>
+#include <MessageList.hpp>
 // Define your application (can't instantiate base class, so need to make a derived one)
 class MainApplication : public pu::ui::Application {
     private:
@@ -7,8 +8,10 @@ class MainApplication : public pu::ui::Application {
         // Layout instance
         PhoneMenuLayout::Ref phoneLayout;
         MessagingLayout::Ref messagingLayout;
+        MessageList::Ref messageList;
 
         void GotoMessaging();
+        void GotoListMessages();
     
     public:
         using Application::Application;

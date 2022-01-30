@@ -3,9 +3,6 @@
 #include <pu/ui/ui_Types.hpp>
 
 MessagingLayout::MessagingLayout() : Layout::Layout() {
-    pu::ui::Color menuItemColor = pu::ui::Color::FromHex("#29BAE8");
-    pu::ui::Color menuItemSelectionColor = pu::ui::Color::FromHex("#6AE6FF");
-
     pu::ui::elm::Rectangle::Ref darkscreen = pu::ui::elm::Rectangle::New(0, 0, 1920, 1080, pu::ui::Color::FromHex("#222222"));
     this->Add(darkscreen);
 
