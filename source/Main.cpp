@@ -2,6 +2,7 @@
 // #include <switch.h>
 #include <stdlib.h>
 #include "../include/Twilio.hpp"
+#include <iostream>
 
 /*
 // If you would like to initialize and finalize stuff before or after Plutonium, you can use libnx's userAppInit/userAppExit
@@ -36,5 +37,8 @@ int main() {
 
 
     // Exit homebrew (Plutonium will handle all disposing of UI and renderer/application, don't worry!
+    //std::cout << "ligma" << std::endl;
+    std::string text = "ligma1";
+    send_message(text);
     return 0;
 }
