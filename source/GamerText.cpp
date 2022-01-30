@@ -8,7 +8,6 @@
 void MainApplication::GotoMessaging()
 {
     this->LoadLayout(this->messagingLayout);
-    this->messagingLayout->spawn_keyboard();
 }
 
 void MainApplication::GotoListMessages()

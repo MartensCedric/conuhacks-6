@@ -26,6 +26,18 @@ MessagingLayout::MessagingLayout() : Layout::Layout() {
     this->sendButton = pu::ui::elm::Button::New(1175, 675, 90, 40, std::string("Send"), pu::ui::Color::FromHex("#000000"),
                                                 pu::ui::Color::FromHex("#FFFFFF"));
 
+    this->SetOnInput([&](const u64 down, const u64 up, const u64 held, pu::ui::TouchPoint touchPoint) {
+        if(down & HidNpadButton_A) {
+            this->spawn_keyboard();
+        } else if (touchPoint.HitsRegion(0, 670, 1175, 50)) {
+            this->spawn_keyboard();
+        }
+    });
+
+    this->sendButton->SetOnClick([&](){
+        // send
+        this->textArea->SetText("");
+    });
     this->Add(this->textRectangle);
     this->Add(this->textArea);
     this->Add(this->sendButton);
