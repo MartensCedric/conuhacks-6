@@ -10,6 +10,9 @@
 class MessagingLayout : public pu::ui::Layout {
     private:
         std::vector<MessageFrame> frames;
+        pu::ui::elm::Rectangle::Ref textRectangle;
+        pu::ui::elm::TextBlock::Ref textArea;
+        pu::ui::elm::Button::Ref sendButton;
     public:
         MessagingLayout();
 

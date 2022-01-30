@@ -11,6 +11,6 @@ class MessageFrame {
 
     public:
         MessageFrame(std::string message, bool i_am_sender);
-        void set_offset(u32 vertical, u32 horizontal);
+        void set_offset(u32 horizontal, u32 vertical);
         void add_to_layout(pu::ui::Layout* layout); 
 };

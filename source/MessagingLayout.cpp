@@ -9,11 +9,15 @@ MessagingLayout::MessagingLayout() : Layout::Layout() {
     frames.push_back(MessageFrame(std::string("Greetings Gamer"), false));
     frames.push_back(MessageFrame(std::string("Ligma"), true));
     frames.push_back(MessageFrame(std::string("Ligma what?"), false));
-    frames.push_back(MessageFrame(std::string("ligma gamers"), true));
+    frames.push_back(MessageFrame(std::string("Ligma gamers"), true));
 
-    for(auto frame : frames)
+    for(int i = 0; i < frames.size(); i++)
     {
-        frame.set_offset(0, 0);
-        frame.add_to_layout(this);
+        frames[i].set_offset(0, 100*i);
+        frames[i].add_to_layout(this);
     }
+
+    /* this->textRectangle = pu::ui::elm::Rectangle::New(10, 600, 800, 200, pu::ui::Color::FromHex("0xaaaaaa")); */
+    /* this->textArea = pu::ui::elm::TextBlock::New(10, 605, std::string("Hello gamers")); */
+    /* this->sendButton = pu::ui::elm::Button::New(400, 605, 200, 100, std::string("Send"), pu::ui::Color::FromHex("#000000"), pu::ui::Color::FromHex("#FFFFFF")); */
 }
