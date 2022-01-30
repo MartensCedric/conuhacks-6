@@ -1,9 +1,7 @@
 #pragma once
 #include <string>
 
-
 class Twilio {
-
     public:
         struct MemoryStruct {
             char *memory;
@@ -13,6 +11,5 @@ class Twilio {
         Twilio();
 
         void send_message(std::string message_body);
-
-        MemoryStruct get_messages();
+        std::string get_messages(std::string account_sid, std::string auth_token);
 };
