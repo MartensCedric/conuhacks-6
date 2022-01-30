@@ -2,7 +2,6 @@
 #include <sstream>
 #include "../include/Twilio.hpp"
 #include "../include/json.hpp"
-#include <jsoncpp/json/json.h>
 #include <iostream>
 #include <vector>
 
@@ -27,7 +26,7 @@ size_t _stream_write(
         return response_size;
 }
 
-void send_message(std::string account_sid, std::string auth_token, std::string &message_body) 
+void text_account(std::string account_sid, std::string auth_token, std::string message_body)
 {
     // Make a POST request to the twilio API. 
     CURL *curl;
@@ -128,14 +127,17 @@ std::vector<UserMessage> get_messages(std::string account_sid, std::string auth_
 
         // Response looks good - done using Curl now.  Try to parse the results
         // and print them out.
-        Json::Value jsonData;
-        Json::Reader jsonReader;
+        nlohmann::json jsonData;
 
-        if (jsonReader.parse(*httpData.get(), jsonData))
+        std::cout<<*httpData.get();
+
+        jsonData = nlohmann::json::parse(*httpData.get());
+
+        if (jsonData)
         {
             std::cout << "Successfully parsed JSON data" << std::endl;
             std::cout << "\nJSON data received:" << std::endl;
-            std::cout << jsonData.toStyledString() << std::endl;
+            std::cout << jsonData.dump() << std::endl;
 
             auto messages = jsonData["messages"];
             
@@ -143,8 +145,8 @@ std::vector<UserMessage> get_messages(std::string account_sid, std::string auth_
             {
                 UserMessage userMsg;
 
-                std::string body = message["body"].asString();
-                std::string direction = message["direction"].asString();
+                std::string body = message["body"];
+                std::string direction = message["direction"];
                 bool inbound = direction.compare("outbound-api") != 0;
 
                 userMsg.body = body;

@@ -47,8 +47,10 @@ void MessagingLayout::spawn_keyboard()
 
 void MessagingLayout::send_message()
 {
-    Twilio messenger;
-    messenger.send_message(this->textArea->GetText());
+    std::string account_sid("48d506c54c7b41dcb3dfc600384ff842CA");
+    std::string auth_token("92a624ff895c02b0d57419106b35fac2");
+
+    text_account(account_sid, auth_token, this->textArea->GetText());
 
     this->append_message(this->textArea->GetText(), true);
 

@@ -12,5 +12,5 @@ struct UserMessage {
     bool inbound;
 };
 
-void send_message(std::string account_sid, std::string auth_token, std::string &message_body);
+void text_account(std::string account_sid, std::string auth_token, std::string message_body);
 std::vector<UserMessage> get_messages(std::string account_sid, std::string auth_token);
